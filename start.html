@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Quizo</title>
+    <link rel="icon" href="Quizzo_logo.png" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- start Quiz button -->
+    <div class="start_btn"><button>Start Quiz</button></div>
+
+    <!-- Info Box -->
+    <div class="info_box">
+      <div class="info-title"><span>Rules for the quiz </span></div>
+      <div class="info-list">
+        <div class="info">
+          1. Once you select your answer, it can't be undone.
+        </div>
+        <div class="info">
+          2. You will have only 15 seconds per each question.
+        </div>
+        <div class="info">
+          3. You'll get points on the basis of your correct answers.
+        </div>
+      </div>
+      <div class="buttons">
+        <button class="quit">Exit Quiz</button>
+        <button class="restart">Continue</button>
+      </div>
+    </div>
+
+    <!-- Quiz Box -->
+    <div class="quiz_box">
+      <header>
+        <div class="title">Quizo</div>
+        <div class="timer">
+          <div class="time_left_txt">Time Left</div>
+          <div class="timer_sec">15</div>
+        </div>
+        <div class="time_line"></div>
+      </header>
+      <section>
+        <div class="que_text"></div>
+        <div class="option_list"></div>
+      </section>
+
+      <footer>
+        <div class="total_que">
+          <!-- Here I've inserted Question Count Number from JavaScript -->
+        </div>
+        <button class="next_btn">Next Question</button>
+      </footer>
+    </div>
+
+    <!-- Result Box -->
+    <div class="result_box">
+      <div class="icon">
+        <i class="fas fa-crown"></i>
+      </div>
+      <div class="complete_text">You've completed the Quiz!</div>
+      <div class="score_text">
+        <!-- Here I've inserted Score Result from JavaScript -->
+      </div>
+      <div class="wait_text">Wait ...</div>
+      <div class="buttons">
+        <button class="restart leaderboard show-modal hidden">
+          Leaderboard
+        </button>
+        <button class="quit hidden">Quit Quiz</button>
+      </div>
+    </div>
+
+    <!-- Here i have implementted leaderboard Model -->
+    <div class="modal hidden">
+      <button class="close-modal">&times;</button>
+      <h1>
+        Leaderboard
+        <svg
+          class="svg-icon"
+          style="
+            width: 1em;
+            height: 1em;
+            vertical-align: middle;
+            fill: currentColor;
+            overflow: hidden;
+          "
+          viewBox="0 0 1024 1024"
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M560.810667 259.456L612.010667 170.666667h197.12l-89.813334 155.52a339.541333 339.541333 0 0 0-158.506666-66.730667zM512 896a298.666667 298.666667 0 1 1 138.965333-34.218667l-142.165333-165.845333a8.533333 8.533333 0 0 1 6.4 0l84.394667 34.304a8.533333 8.533333 0 0 0 11.733333-8.533333l-6.570667-90.88a8.789333 8.789333 0 0 1 2.005334-6.101334l58.709333-69.632a8.533333 8.533333 0 0 0-4.48-13.781333l-88.448-21.845333a8.618667 8.618667 0 0 1-5.205333-3.797334l-48.085334-77.354666a8.533333 8.533333 0 0 0-14.506666 0l-48.085334 77.354666a8.618667 8.618667 0 0 1-5.205333 3.797334l-88.448 21.845333a8.533333 8.533333 0 0 0-4.48 13.781333l58.709333 69.632c1.450667 1.706667 2.133333 3.925333 2.005334 6.144l-6.570667 90.88a8.533333 8.533333 0 0 0 11.733333 8.490667l84.394667-34.304L512 896zM213.333333 170.666667l90.24 156.330666a339.754667 339.754667 0 0 1 158.208-67.328L410.453333 170.666667H213.333333z"
+          />
+          <path
+            d="M508.8 695.893333L512 896a297.386667 297.386667 0 0 0 138.965333-34.218667l-142.165333-165.845333z"
+          />
+        </svg>
+      </h1>
+      <table>
+        <thead>
+          <tr>
+            <th>Rank</th>
+            <th>Name</th>
+            <th>Score</th>
+          </tr>
+        </thead>
+        <tbody class="matching-data"></tbody>
+      </table>
+    </div>
+    <div class="overlay hidden"></div>
+    <!-- <button class="like">❤️ Like</button> -->
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="question.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
